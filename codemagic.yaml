@@ -32,8 +32,8 @@ workflows:
             - name: Build ipa for distribution
               script: |
                 xcode-project build-ipa \
-                  --workspace "ios/Codemagic_RN.xcworkspace" \
-                  --scheme "Codemagic_RN"
+                  --workspace "ios/OtaUpdate.xcworkspace" \
+                  --scheme "OtaUpdate"
         artifacts:
             - build/ios/ipa/*.ipa
             - /tmp/xcodebuild_logs/*.log
