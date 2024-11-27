@@ -1,4 +1,18 @@
 {
   "name": "OtaUpdate",
-  "displayName": "OtaUpdate"
+  "displayName": "OtaUpdate",
+  "extra": {
+    "eas": {
+      "projectId": "67cd9bb3-0374-4fa9-b190-c2167c21aa87"
+    }
+  },
+  "runtimeVersion": "1.0.0",
+  "updates": {
+    "url": "https://u.expo.dev/67cd9bb3-0374-4fa9-b190-c2167c21aa87"
+  },
+  "android": {},
+  "jsEngine": "hermes",
+  "ios": {
+    "jsEngine": "jsc"
+  }
 }

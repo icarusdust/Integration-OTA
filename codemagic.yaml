@@ -1,0 +1,44 @@
+
+workflows:
+    ios-workflow:
+        name: iOS workflow
+        instance_type: mac_mini_m2
+        environment:
+          ios_signing:
+            distribution_type: app_store
+            bundle_identifier: org.eas-update-integration.io
+          xcode: 16.1      
+        integrations:
+          app_store_connect: CM_Nevercode
+               
+        cache:
+          cache_paths:
+            - $HOME/Library/Caches/CocoaPods
+        scripts:
+            - name: Install npm dependencies
+              script: |
+                npm install --legacy-peer-deps
+            - name: Install CocoaPods dependencies
+              script: |
+                cd ios && pod install
+            - name: Set up code signing settings on Xcode project
+              script: |
+                xcode-project use-profiles --warn-only
+            - name: Increment build number
+              script: |
+                cd $CM_BUILD_DIR/ios
+                LATEST_BUILD_NUMBER=$(app-store-connect get-latest-testflight-build-number "$APP_ID")
+                agvtool new-version -all $(($LATEST_BUILD_NUMBER + 3))
+            - name: Build ipa for distribution
+              script: |
+                xcode-project build-ipa \
+                  --workspace "ios/Codemagic_RN.xcworkspace" \
+                  --scheme "Codemagic_RN"
+        artifacts:
+            - build/ios/ipa/*.ipa
+            - /tmp/xcodebuild_logs/*.log
+            - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+            - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+        publishing:
+          app_store_connect:
+            auth: integration
