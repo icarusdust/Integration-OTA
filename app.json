@@ -8,7 +8,10 @@
   },
   "runtimeVersion": "1.0.0",
   "updates": {
-    "url": "https://u.expo.dev/67cd9bb3-0374-4fa9-b190-c2167c21aa87"
+    "url": "https://u.expo.dev/67cd9bb3-0374-4fa9-b190-c2167c21aa87",
+    "requestHeaders": {
+      "expo-channel-name": "preview"
+    }
   },
   "android": {},
   "jsEngine": "hermes",
