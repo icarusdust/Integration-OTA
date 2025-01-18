@@ -27,7 +27,7 @@ workflows:
             - name: Increment build number
               script: |
                 cd $CM_BUILD_DIR/ios
-                LATEST_BUILD_NUMBER=$(app-store-connect get-latest-testflight-build-number "6738749854")
+                LATEST_BUILD_NUMBER=$(app-store-connect get-latest-testflight-build-number "6738749854" --pre-release-version 1.0)
                 agvtool new-version -all $(($LATEST_BUILD_NUMBER + 3))
             - name: Build ipa for distribution
               script: |
