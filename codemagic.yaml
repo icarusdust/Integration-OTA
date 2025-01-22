@@ -10,7 +10,11 @@ workflows:
           xcode: 16.2   
         integrations:
           app_store_connect: CM_Nevercode
-               
+        triggering:
+          events:
+             - pull_request
+          branch_patterns:
+             - pattern: 'main'  
         cache:
           cache_paths:
             - $HOME/Library/Caches/CocoaPods
