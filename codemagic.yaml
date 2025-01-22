@@ -14,7 +14,7 @@ workflows:
           events:
              - pull_request
           branch_patterns:
-             - pattern: 'main'  
+             - pattern: 'test123'  
         cache:
           cache_paths:
             - $HOME/Library/Caches/CocoaPods
