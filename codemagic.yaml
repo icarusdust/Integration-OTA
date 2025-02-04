@@ -2,7 +2,7 @@
 workflows:
     ios-workflow:
         name: iOS workflow
-        instance_type: mac_mini_m2
+        # instance_type: mac_mini_m2
         environment:
           ios_signing:
             distribution_type: app_store
