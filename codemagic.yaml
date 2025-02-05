@@ -7,7 +7,7 @@ workflows:
           ios_signing:
             distribution_type: app_store
             bundle_identifier: org.eas-update-integration.io
-          xcode: 16.1
+          xcode: 16.2
         integrations:
           app_store_connect: CM_Nevercode
         triggering:
