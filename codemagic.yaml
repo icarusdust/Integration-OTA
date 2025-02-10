@@ -1,8 +1,14 @@
 
 workflows:
+    android-workflow:
+       name: Android-default
+       instance_type: linux_x2
+       scripts:
+         - name: Test
+           script: echo "hi"
     ios-workflow:
         name: iOS workflow
-        # instance_type: mac_mini_m2
+   
         environment:
           ios_signing:
             distribution_type: app_store
