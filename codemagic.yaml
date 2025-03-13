@@ -22,15 +22,7 @@ workflows:
             bundle_identifier: org.eas-update-integration.io
           xcode: ${{ inputs.xcode_version }}
         integrations:
-          app_store_connect: CM_Nevercode
-        triggering:
-          events:
-             - pull_request
-          branch_patterns:
-             - pattern: 'test123'  
-        cache:
-          cache_paths:
-            - $HOME/Library/Caches/CocoaPods
+          app_store_connect: CM_Nevercode  
         scripts:
             - name: Install npm dependencies
               script: |
