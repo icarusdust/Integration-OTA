@@ -12,11 +12,15 @@ workflows:
     ios-workflow:
         name: iOS workflow
         instance_type: mac_mini_m2
+        inputs:
+          xcode_version:
+            description: Set Xcode version dynamically
+            type: number
         environment:
           ios_signing:
             distribution_type: app_store
             bundle_identifier: org.eas-update-integration.io
-          xcode: 16.1
+          xcode: ${{ inputs.xcode_version }}
         integrations:
           app_store_connect: CM_Nevercode
         triggering:
