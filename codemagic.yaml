@@ -13,7 +13,7 @@ workflows:
             distribution_type: app_store
             bundle_identifier: org.eas-update-integration.io
         integrations:
-          app_store_connect: CM_Nevercode  
+          app_store_connect: Codemagic  
         scripts:
             - name: Install npm dependencies
               script: |
