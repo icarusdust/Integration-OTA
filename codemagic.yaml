@@ -9,7 +9,7 @@ workflows:
     ios-workflow:
         name: iOS workflow
         environment:
-          group:
+          groups:
             - ios_creds
           ios_signing:
             distribution_type: app_store
