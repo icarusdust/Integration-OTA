@@ -7,20 +7,12 @@ workflows:
           vars:
             CM_CLONE_DEPTH: 100
        scripts:
-         - name: Test
-           script: echo "hi"
     ios-workflow:
         name: iOS workflow
-        instance_type: mac_mini_m2
-        inputs:
-          xcode_version:
-            description: Set Xcode version dynamically
-            type: number
         environment:
           ios_signing:
             distribution_type: app_store
             bundle_identifier: org.eas-update-integration.io
-          xcode: ${{ inputs.xcode_version }}
         integrations:
           app_store_connect: CM_Nevercode  
         scripts:
@@ -54,12 +46,5 @@ workflows:
             - /tmp/xcodebuild_logs/*.log
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
-        publishing:
-             environment:
-                groups:
-                  - test
-             scripts:
-               - name: Test
-                 script: echo $TEST
           # app_store_connect:
           #   auth: integration
