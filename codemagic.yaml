@@ -6,7 +6,6 @@ workflows:
        environment:
           vars:
             CM_CLONE_DEPTH: 100
-       scripts:
     ios-workflow:
         name: iOS workflow
         environment:
