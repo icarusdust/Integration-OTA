@@ -2,7 +2,7 @@
 workflows:
     android-workflow:
        name: Android-default
-       # instance_type: linux_x2
+       instance_type: linux_x2
        scripts:
          - name: Test
            script: |
@@ -10,6 +10,9 @@ workflows:
     ios-workflow:
         name: iOS workflow
         environment:
+          java: 21
+          ruby: xx
+          xcode: latest
           groups:
             - ios_creds
           ios_signing:
