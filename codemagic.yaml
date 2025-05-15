@@ -6,7 +6,8 @@ workflows:
        environment:
        scripts:
          - name: Test
-           script: echo "hello"
+           script: |
+               echo "hello"
     ios-workflow:
         name: iOS workflow
         environment:
