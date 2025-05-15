@@ -9,8 +9,6 @@ workflows:
     ios-workflow:
         name: iOS workflow
         environment:
-          groups:
-            - ios_creds
           ios_signing:
             distribution_type: app_store
             bundle_identifier: org.eas-update-integration.io
