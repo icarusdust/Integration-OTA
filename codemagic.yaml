@@ -2,8 +2,7 @@
 workflows:
     android-workflow:
        name: Android-default
-       instance_type: linux_x2
-       environment:
+       # instance_type: linux_x2
        scripts:
          - name: Test
            script: |
