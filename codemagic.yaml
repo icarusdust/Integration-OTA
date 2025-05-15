@@ -4,8 +4,9 @@ workflows:
        name: Android-default
        instance_type: linux_x2
        environment:
-          vars:
-            CM_CLONE_DEPTH: 100
+       scripts:
+         - name: Test
+           script: echo "hello"
     ios-workflow:
         name: iOS workflow
         environment:
