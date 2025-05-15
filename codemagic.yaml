@@ -9,6 +9,8 @@ workflows:
     ios-workflow:
         name: iOS workflow
         environment:
+          groups:
+            - ios_creds
           ios_signing:
             distribution_type: app_store
             bundle_identifier: org.eas-update-integration.io
@@ -36,6 +38,8 @@ workflows:
   #       fi
   # - name: Set up code signing settings on Xcode project
   #   script: xcode-project use-profiles
+            - name: Test
+              script: echo $TEST
             - name: Install npm dependencies
               script: |
                 npm install --legacy-peer-deps
