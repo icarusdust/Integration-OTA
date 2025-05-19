@@ -19,11 +19,6 @@ workflows:
         integrations:
           app_store_connect: Codemagic  
         scripts:
-           - name: Machine specs
-             script: |
-                echo "Machine: $(sysctl -n machdep.cpu.brand_string)"
-                echo "CPU cores: $(sysctl -n hw.physicalcpu) physical / $(sysctl -n hw.logicalcpu) logical"
-                echo "RAM: $(($(sysctl -n hw.memsize) / 1024 / 1024 / 1024)) GB"
   # - name: Set up keychain to be used for code signing using Codemagic CLI 'keychain' command
   #   script: keychain initialize
   # - name: Set up provisioning profiles from environment variables
@@ -45,6 +40,11 @@ workflows:
   #       fi
   # - name: Set up code signing settings on Xcode project
   #   script: xcode-project use-profiles
+            - name: Machine specs
+              script: |
+                echo "Machine: $(sysctl -n machdep.cpu.brand_string)"
+                echo "CPU cores: $(sysctl -n hw.physicalcpu) physical / $(sysctl -n hw.logicalcpu) logical"
+                echo "RAM: $(($(sysctl -n hw.memsize) / 1024 / 1024 / 1024)) GB"
             - name: Test
               script: echo $TEST
             - name: Install npm dependencies
