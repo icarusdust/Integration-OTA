@@ -10,7 +10,7 @@ workflows:
     ios-workflow:
         name: iOS workflow
         environment:
-          xcode: latest
+          xcode: 16.2
           groups:
             - ios_creds
           ios_signing:
