@@ -17,7 +17,7 @@ workflows:
             distribution_type: app_store
             bundle_identifier: org.eas-update-integration.io
         integrations:
-          app_store_connect: Codemagic  
+          app_store_connect: CM  
         scripts:
   # - name: Set up keychain to be used for code signing using Codemagic CLI 'keychain' command
   #   script: keychain initialize
